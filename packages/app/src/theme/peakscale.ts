@@ -44,6 +44,18 @@ const baseTheme = createTheme({
       secondary: {
         main: '#091836',
       },
+      grey: {
+        50: '#C1C7D0',
+        100: '#7A869A',
+        200: '#6B778C',
+        300: '#5E6C84',
+        400: '#505F79',
+        500: '#42526E',
+        600: '#344563',
+        700: '#253858',
+        800: '#172B4D',
+        900: '#091E42',
+      },
       error: {
         main: '#FF5630',
       },
@@ -143,30 +155,30 @@ const createCustomThemeOverrides = (
       },
       standardError: {
         color: '#FFFFFF',
-        backgroundColor: theme.palette.error.dark,
+        backgroundColor: theme.palette.error.main,
         '& $icon': {
           color: '#FFFFFF',
         },
       },
       standardInfo: {
         color: '#FFFFFF',
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: theme.palette.primary.main,
         '& $icon': {
           color: '#FFFFFF',
         },
       },
       standardSuccess: {
         color: '#FFFFFF',
-        backgroundColor: theme.palette.success.dark,
+        backgroundColor: theme.palette.success.main,
         '& $icon': {
           color: '#FFFFFF',
         },
       },
       standardWarning: {
-        color: theme.palette.grey[700],
-        backgroundColor: theme.palette.secondary.light,
+        color: '#FFFFFF',
+        backgroundColor: theme.palette.warning.main,
         '& $icon': {
-          color: theme.palette.grey[700],
+          color: '#FFFFFF',
         },
       },
     },
@@ -199,7 +211,7 @@ const createCustomThemeOverrides = (
       root: {
         borderRadius: 3,
         backgroundColor: theme.palette.grey[50],
-        color: theme.palette.primary.dark,
+        color: theme.palette.primary.main,
         margin: 4,
       },
     },
