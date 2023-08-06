@@ -34,6 +34,9 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
+import { UnifiedThemeProvider } from '@backstage/theme';
+import { peakscaleTheme } from './theme/peakscale';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -53,6 +56,18 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+  themes: [
+    {
+      id: 'peakscale',
+      title: 'Peak Scale',
+      variant: 'light',
+      Provider: ({ children }) => (
+        <UnifiedThemeProvider theme={peakscaleTheme}>
+          {children}
+        </UnifiedThemeProvider>
+      ),
+    },
+  ],
 });
 
 const routes = (
