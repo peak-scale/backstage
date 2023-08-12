@@ -42,13 +42,13 @@ kubectl apply -f deploy/gke/backstage -n backstage
 
 ### Example app
 
-In order to test the Kubernetes plugin, an example app is deployed:
+In order to test various features (TechDocs, Kubernetes plugin etc.), an example app is deployed:
 
 ```sh
-kubectl apply -f deploy/gke/example-app/users-api-deploy.yaml -n default
+kubectl apply -f examples/example-app/k8s
 ```
 
-The Backstage component can then be imported into the catalog: <https://github.com/peak-scale/backstage/blob/main/deploy/gke/example-app/users-api-component.yaml>
+The Backstage component can then be imported into the catalog: <https://github.com/peak-scale/backstage/blob/main/examples/example-app/example-app-backstage.yaml>
 
 ### Shutdown
 

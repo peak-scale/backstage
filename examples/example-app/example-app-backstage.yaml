@@ -1,10 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: users-api
-  description: Users api
+  name: example-app
+  description: Example App
   annotations:
-    backstage.io/kubernetes-id: users-api
+    backstage.io/kubernetes-id: example-app
+    backstage.io/techdocs-ref: dir:.
   tags:
     - nginx
     - python
@@ -25,5 +26,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: users-team
-  system: public-websites
+  owner: user:guest
+  system: examples
