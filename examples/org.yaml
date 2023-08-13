@@ -5,13 +5,34 @@ kind: User
 metadata:
   name: guest
 spec:
-  memberOf: [guests]
+  memberOf: [example-group]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: guests
+  name: example-group
 spec:
   type: team
   children: []
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: johanngyger
+spec:
+  memberOf: [example-group]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: imathu
+spec:
+  memberOf: [example-group]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: chlab
+spec:
+  memberOf: [example-group]

@@ -26,5 +26,5 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: user:guest
+  owner: example-group
   system: examples
