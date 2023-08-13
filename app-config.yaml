@@ -63,7 +63,15 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: Iv1.c6cf96a850e93cb5
+        clientSecret: 844bab75b41c029d5d9be357589a21f376e17e36
+      production:
+        clientId: Iv1.2e05c5997eef17e6
+        clientSecret: 13bd80230c9a9bb3c935af89487709e13ec2be0c
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -95,14 +103,14 @@ catalog:
       target: ../../examples/example-app/example-app-backstage.yaml
 
     ## Uncomment these lines to add more example data
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml
 
     ## Uncomment these lines to add an example org
-    # - type: url
-    #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
-    #   rules:
-    #     - allow: [User, Group]
+    - type: url
+      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme-corp.yaml
+      rules:
+        - allow: [User, Group]
 
 kubernetes:
  serviceLocatorMethod:

@@ -37,6 +37,9 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { UnifiedThemeProvider } from '@backstage/theme';
 import { peakscaleTheme } from './theme/peakscale';
 
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { SignInPage } from '@backstage/core-components';
+
 const app = createApp({
   apis,
   bindRoutes({ bind }) {
@@ -68,6 +71,34 @@ const app = createApp({
       ),
     },
   ],
+  components: {
+    SignInPage: props => (
+      <SignInPage
+        {...props}
+        auto
+        provider={{
+          id: 'github-auth-provider',
+          title: 'GitHub',
+          message: 'Sign in using GitHub',
+          apiRef: githubAuthApiRef,
+          }}
+      />
+        /*
+        <SignInPage
+            {...props}
+            providers={[
+                'guest',
+                {
+                    id: 'github-auth-provider',
+                    title: 'GitHub',
+                    message: 'Sign in using GitHub',
+                    apiRef: githubAuthApiRef,
+                },
+            ]}
+        />
+        */
+    ),
+  },
 });
 
 const routes = (
