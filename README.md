@@ -34,6 +34,7 @@ Some tips:
 ## Local development
 
 ```sh
+export AUTH_GITHUB_CLIENT_SECRET=...
 yarn install
 yarn dev
 ```
